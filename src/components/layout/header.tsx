@@ -4,8 +4,10 @@ import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { useAuthStore } from "@/stores/auth-store";
 import { useCartStore } from "@/stores/cart-store";
+import { useMenuStore } from "@/stores/menu-store";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { ShoppingCart, User, LogOut, Globe, Menu as MenuIcon } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { ShoppingCart, User, LogOut, Globe, Menu as MenuIcon, Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import {
   DropdownMenu,
@@ -28,8 +30,19 @@ export function Header() {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
+  const menuT = useTranslations("Menu");
 
   const [isMounted, setIsMounted] = useState(false);
+
+  const searchQuery = useMenuStore((state) => state.searchQuery);
+  const setSearchQuery = useMenuStore((state) => state.setSearchQuery);
+
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    if (pathname !== "/menu") {
+      router.push("/menu");
+    }
+  };
 
   const { user, isAuthenticated, logout } = useAuthStore();
   const cartCount = useCartStore((state) => state.getTotalItems());
@@ -90,6 +103,20 @@ export function Header() {
           <nav className="flex items-center gap-6">
             <NavLinks />
           </nav>
+        </div>
+
+        {/* Desktop Search */}
+        <div className="hidden md:flex flex-1 max-w-md px-6">
+          <div className="relative w-full">
+            <Search className="absolute top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground start-3" />
+            <Input
+              type="search"
+              placeholder={menuT("searchPlaceholder")}
+              className="w-full ps-9 rounded-full bg-muted/50 focus-visible:bg-background"
+              value={searchQuery}
+              onChange={handleSearch}
+            />
+          </div>
         </div>
 
         {/* Actions */}
