@@ -3,6 +3,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { useAuthStore } from "@/stores/auth-store";
+import { useCartStore } from "@/stores/cart-store";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, User, LogOut, Globe, Menu as MenuIcon } from "lucide-react";
 import {
@@ -26,8 +27,7 @@ export function Header() {
   const router = useRouter();
 
   const { user, isAuthenticated, logout } = useAuthStore();
-  // Cart count will come from cartStore later, mock to 0 for now
-  const cartCount = 0;
+  const cartCount = useCartStore((state) => state.getTotalItems());
 
   const toggleLocale = () => {
     const nextLocale = locale === "en" ? "ar" : "en";
