@@ -48,5 +48,13 @@
     "register": "Sign Up",
     "logout": "Logout",
     "dashboard": "Dashboard"
+  },
+  "Admin": {
+    "adminPanel": "Admin Panel",
+    "dashboard": "Overview",
+    "orders": "Orders Management",
+    "menuItems": "Menu Items",
+    "settings": "Settings",
+    "backToStore": "Back to Store"
   }
 }

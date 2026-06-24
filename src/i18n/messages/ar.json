@@ -48,5 +48,13 @@
     "register": "حساب جديد",
     "logout": "تسجيل الخروج",
     "dashboard": "لوحة التحكم"
+  },
+  "Admin": {
+    "adminPanel": "لوحة الإدارة",
+    "dashboard": "نظرة عامة",
+    "orders": "إدارة الطلبات",
+    "menuItems": "الأصناف",
+    "settings": "الإعدادات",
+    "backToStore": "العودة للمتجر"
   }
 }
