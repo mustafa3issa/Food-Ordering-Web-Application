@@ -20,5 +20,15 @@
     "heroTitle": "طعام لذيذ، توصيل سريع",
     "heroSubtitle": "اطلب من أفضل المطاعم في المدينة",
     "orderNow": "اطلب الآن"
+  },
+  "Auth": {
+    "loginTitle": "مرحباً بعودتك",
+    "loginDescription": "أدخل بريدك الإلكتروني لتسجيل الدخول إلى حسابك",
+    "emailLabel": "البريد الإلكتروني",
+    "passwordLabel": "كلمة المرور",
+    "loginButton": "تسجيل الدخول",
+    "noAccount": "ليس لديك حساب؟",
+    "registerLink": "أنشئ حساباً",
+    "loginSuccess": "تم تسجيل الدخول بنجاح"
   }
 }

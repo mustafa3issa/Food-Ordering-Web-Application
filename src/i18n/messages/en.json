@@ -20,5 +20,15 @@
     "heroTitle": "Delicious Food, Delivered Fast",
     "heroSubtitle": "Order from the best restaurants in town",
     "orderNow": "Order Now"
+  },
+  "Auth": {
+    "loginTitle": "Welcome back",
+    "loginDescription": "Enter your email to sign in to your account",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "loginButton": "Sign In",
+    "noAccount": "Don't have an account?",
+    "registerLink": "Sign up",
+    "loginSuccess": "Successfully logged in"
   }
 }
