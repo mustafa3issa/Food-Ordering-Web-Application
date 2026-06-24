@@ -1,0 +1,24 @@
+{
+  "Common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "search": "Search",
+    "cancel": "Cancel",
+    "save": "Save",
+    "submit": "Submit"
+  },
+  "Navigation": {
+    "home": "Home",
+    "menu": "Menu",
+    "cart": "Cart",
+    "orders": "Orders",
+    "login": "Login",
+    "logout": "Logout",
+    "dashboard": "Dashboard"
+  },
+  "Home": {
+    "heroTitle": "Delicious Food, Delivered Fast",
+    "heroSubtitle": "Order from the best restaurants in town",
+    "orderNow": "Order Now"
+  }
+}
