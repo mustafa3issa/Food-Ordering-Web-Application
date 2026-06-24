@@ -28,7 +28,7 @@ export const MOCK_CATEGORIES: Category[] = [
   {
     id: 'cat-4',
     nameEn: 'Desserts',
-    nameAr: 'حلى',
+    nameAr: 'حلويات',
     slug: 'desserts',
     icon: 'cake-slice',
     sortOrder: 4,
