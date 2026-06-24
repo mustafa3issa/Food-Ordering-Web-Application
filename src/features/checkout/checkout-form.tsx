@@ -14,14 +14,6 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -86,11 +78,22 @@ export function CheckoutForm() {
     const newOrder: Order = {
       id: `ORD-${Date.now().toString().slice(-6)}`,
       userId: user!.id,
-      items: [...items],
+      items: items.map(item => ({
+        menuItemId: item.menuItem.id,
+        nameEn: item.menuItem.nameEn,
+        nameAr: item.menuItem.nameAr,
+        quantity: item.quantity,
+        unitPrice: item.menuItem.price,
+        image: item.menuItem.image
+      })),
       status: "pending",
       totalAmount: total,
       createdAt: new Date().toISOString(),
-      shippingAddress: `${values.address}, ${values.city}`,
+      deliveryAddress: `${values.address}, ${values.city}`,
+      deliveryFee: deliveryFee,
+      notes: "",
+      paymentMethod: values.paymentMethod as "cash" | "card",
+      estimatedDeliveryMinutes: 45,
     };
 
     addOrder(newOrder);
@@ -111,108 +114,97 @@ export function CheckoutForm() {
             <CardTitle>{t("shippingDetails")}</CardTitle>
           </CardHeader>
           <CardContent>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <FormField
-                    control={form.control}
-                    name="fullName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t("fullName")}</FormLabel>
-                        <FormControl>
-                          <Input placeholder={t("fullNamePlaceholder")} {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label htmlFor="fullName" className="text-sm font-medium leading-none">{t("fullName")}</label>
+                  <Input 
+                    id="fullName" 
+                    placeholder={t("fullNamePlaceholder")} 
+                    {...form.register("fullName")} 
                   />
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t("phone")}</FormLabel>
-                        <FormControl>
-                          <Input placeholder="01X XXXX XXXX" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <FormField
-                    control={form.control}
-                    name="address"
-                    render={({ field }) => (
-                      <FormItem className="md:col-span-2">
-                        <FormLabel>{t("address")}</FormLabel>
-                        <FormControl>
-                          <Textarea 
-                            placeholder={t("addressPlaceholder")} 
-                            className="resize-none" 
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="city"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>{t("city")}</FormLabel>
-                        <FormControl>
-                          <Input placeholder={t("cityPlaceholder")} {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <Separator />
-                
-                <FormField
-                  control={form.control}
-                  name="paymentMethod"
-                  render={({ field }) => (
-                    <FormItem className="space-y-3">
-                      <FormLabel>{t("paymentMethod")}</FormLabel>
-                      <FormControl>
-                        <RadioGroup
-                          onValueChange={field.onChange}
-                          defaultValue={field.value}
-                          className="flex flex-col space-y-1"
-                        >
-                          <FormItem className="flex items-center space-x-3 space-x-reverse space-y-0">
-                            <FormControl>
-                              <RadioGroupItem value="cash" />
-                            </FormControl>
-                            <FormLabel className="font-normal">
-                              {t("cashOnDelivery")}
-                            </FormLabel>
-                          </FormItem>
-                          <FormItem className="flex items-center space-x-3 space-x-reverse space-y-0">
-                            <FormControl>
-                              <RadioGroupItem value="card" disabled />
-                            </FormControl>
-                            <FormLabel className="font-normal text-muted-foreground">
-                              {t("creditCard")} ({t("comingSoon")})
-                            </FormLabel>
-                          </FormItem>
-                        </RadioGroup>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
+                  {form.formState.errors.fullName && (
+                    <p className="text-sm font-medium text-destructive">
+                      {form.formState.errors.fullName.message}
+                    </p>
                   )}
-                />
-              </form>
-            </Form>
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="phone" className="text-sm font-medium leading-none">{t("phone")}</label>
+                  <Input 
+                    id="phone" 
+                    placeholder="01X XXXX XXXX" 
+                    {...form.register("phone")} 
+                  />
+                  {form.formState.errors.phone && (
+                    <p className="text-sm font-medium text-destructive">
+                      {form.formState.errors.phone.message}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-2 md:col-span-2">
+                  <label htmlFor="address" className="text-sm font-medium leading-none">{t("address")}</label>
+                  <Textarea 
+                    id="address" 
+                    placeholder={t("addressPlaceholder")} 
+                    className="resize-none" 
+                    {...form.register("address")} 
+                  />
+                  {form.formState.errors.address && (
+                    <p className="text-sm font-medium text-destructive">
+                      {form.formState.errors.address.message}
+                    </p>
+                  )}
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="city" className="text-sm font-medium leading-none">{t("city")}</label>
+                  <Input 
+                    id="city" 
+                    placeholder={t("cityPlaceholder")} 
+                    {...form.register("city")} 
+                  />
+                  {form.formState.errors.city && (
+                    <p className="text-sm font-medium text-destructive">
+                      {form.formState.errors.city.message}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              <Separator />
+              
+              <div className="space-y-3">
+                <label className="text-sm font-medium leading-none">{t("paymentMethod")}</label>
+                <RadioGroup
+                  defaultValue={form.getValues("paymentMethod")}
+                  onValueChange={(value) => form.setValue("paymentMethod", value as "cash" | "card")}
+                  className="flex flex-col space-y-1"
+                >
+                  <div className="flex items-center space-x-3 space-x-reverse">
+                    <RadioGroupItem value="cash" id="cash" />
+                    <label htmlFor="cash" className="font-normal text-sm cursor-pointer">
+                      {t("cashOnDelivery")}
+                    </label>
+                  </div>
+                  <div className="flex items-center space-x-3 space-x-reverse">
+                    <RadioGroupItem value="card" id="card" disabled />
+                    <label htmlFor="card" className="font-normal text-sm text-muted-foreground">
+                      {t("creditCard")} ({t("comingSoon")})
+                    </label>
+                  </div>
+                </RadioGroup>
+                {form.formState.errors.paymentMethod && (
+                  <p className="text-sm font-medium text-destructive">
+                    {form.formState.errors.paymentMethod.message}
+                  </p>
+                )}
+              </div>
+            </form>
           </CardContent>
         </Card>
       </div>

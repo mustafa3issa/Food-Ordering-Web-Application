@@ -105,5 +105,65 @@
       "addressRequired": "العنوان مطلوب لإتمام التوصيل",
       "cityRequired": "يرجى إدخال اسم المدينة"
     }
+  },
+  "Orders": {
+    "pageTitle": "طلباتي",
+    "pageDescription": "تابع طلباتك الحالية وتصفح سجل طلباتك السابقة.",
+    "emptyTitle": "لا توجد طلبات بعد",
+    "emptyDescription": "لم تقم بإجراء أي طلبات حتى الآن. استكشف قائمتنا الشهية وابدأ الطلب!",
+    "startOrdering": "ابدأ الطلب الآن",
+    "orderId": "الطلب",
+    "total": "الإجمالي",
+    "viewDetails": "عرض التفاصيل",
+    "plusMoreItems": "+ {count} أصناف أخرى",
+    "trackingTitle": "حالة الطلب",
+    "orderSummary": "ملخص الطلب",
+    "deliveryDetails": "تفاصيل التوصيل",
+    "customerName": "اسم العميل",
+    "shippingAddress": "عنوان التوصيل",
+    "noAddressProvided": "لم يتم توفير عنوان",
+    "paymentMethod": "طريقة الدفع",
+    "backToOrders": "العودة للطلبات",
+    "notFoundTitle": "الطلب غير موجود",
+    "notFoundDescription": "لم نتمكن من العثور على الطلب الذي تبحث عنه.",
+    "status": {
+      "pending": "قيد المراجعة",
+      "confirmed": "تم التأكيد",
+      "preparing": "جاري التحضير",
+      "ready": "جاهز",
+      "out_for_delivery": "في الطريق",
+      "delivered": "تم التوصيل",
+      "cancelled": "ملغي"
+    },
+    "timeline": {
+      "pending": "تم استلام الطلب",
+      "confirmed": "تم التأكيد",
+      "preparing": "يتم التحضير",
+      "ready": "جاهز للتوصيل",
+      "out_for_delivery": "في الطريق إليك",
+      "delivered": "تم التوصيل",
+      "currentStage": "المرحلة الحالية",
+      "orderCancelled": "تم إلغاء هذا الطلب."
+    }
+  },
+  "Footer": {
+    "brand": "فود آب",
+    "description": "طعام شهي يُوصل ساخناً وطازجاً لباب منزلك في أقل من 45 دقيقة. مكونات عالية الجودة ووصفات أصلية.",
+    "quickLinks": "روابط سريعة",
+    "menu": "تصفح المنيو",
+    "cart": "سلة المشتريات",
+    "orders": "تتبع الطلبات",
+    "admin": "دخول الإدارة",
+    "support": "الدعم والمساعدة",
+    "faq": "الأسئلة الشائعة",
+    "contact": "اتصل بنا",
+    "terms": "شروط الخدمة",
+    "privacy": "سياسة الخصوصية",
+    "contactUs": "معلومات الاتصال",
+    "address": "123 شارع الطعام، مدينة المذاق",
+    "phone": "+20 123 456 7890",
+    "email": "hello@foodapp.com",
+    "allRightsReserved": "جميع الحقوق محفوظة.",
+    "madeWithLove": "صُنع بحب ❤️"
   }
 }

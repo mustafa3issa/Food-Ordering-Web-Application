@@ -105,5 +105,65 @@
       "addressRequired": "Address is required",
       "cityRequired": "City is required"
     }
+  },
+  "Orders": {
+    "pageTitle": "My Orders",
+    "pageDescription": "Track your recent orders and view your order history.",
+    "emptyTitle": "No orders yet",
+    "emptyDescription": "You haven't placed any orders yet. Start exploring our delicious menu!",
+    "startOrdering": "Start Ordering",
+    "orderId": "Order",
+    "total": "Total",
+    "viewDetails": "View Details",
+    "plusMoreItems": "+ {count} more items",
+    "trackingTitle": "Order Status",
+    "orderSummary": "Order Summary",
+    "deliveryDetails": "Delivery Details",
+    "customerName": "Customer Name",
+    "shippingAddress": "Shipping Address",
+    "noAddressProvided": "No address provided",
+    "paymentMethod": "Payment Method",
+    "backToOrders": "Back to Orders",
+    "notFoundTitle": "Order Not Found",
+    "notFoundDescription": "We couldn't find the order you're looking for.",
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "preparing": "Preparing",
+      "ready": "Ready",
+      "out_for_delivery": "Out for Delivery",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled"
+    },
+    "timeline": {
+      "pending": "Order Placed",
+      "confirmed": "Confirmed",
+      "preparing": "Preparing",
+      "ready": "Ready for Delivery",
+      "out_for_delivery": "On the Way",
+      "delivered": "Delivered",
+      "currentStage": "Current Stage",
+      "orderCancelled": "This order was cancelled."
+    }
+  },
+  "Footer": {
+    "brand": "FoodApp",
+    "description": "Delicious food delivered hot and fresh to your door in under 45 minutes. Quality ingredients and authentic recipes.",
+    "quickLinks": "Quick Links",
+    "menu": "Browse Menu",
+    "cart": "Shopping Cart",
+    "orders": "Track Orders",
+    "admin": "Admin Login",
+    "support": "Support",
+    "faq": "FAQs",
+    "contact": "Contact Us",
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "contactUs": "Contact Info",
+    "address": "123 Food Street, Tasty City",
+    "phone": "+20 123 456 7890",
+    "email": "hello@foodapp.com",
+    "allRightsReserved": "All rights reserved.",
+    "madeWithLove": "Made with ❤️"
   }
 }
