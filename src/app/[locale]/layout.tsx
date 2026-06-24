@@ -35,7 +35,7 @@ export default async function RootLayout({
     <html lang={locale} dir={dir}>
       <body className={`${inter.variable} ${notoSansArabic.variable} font-sans antialiased min-h-screen flex flex-col`}>
         <NextIntlClientProvider messages={messages}>
-          <DirectionProvider dir={dir}>
+          <DirectionProvider direction={dir as "ltr" | "rtl"}>
             {children}
             <Toaster />
           </DirectionProvider>

@@ -4,7 +4,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { useAuthStore } from "@/stores/auth-store";
 import { useCartStore } from "@/stores/cart-store";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { ShoppingCart, User, LogOut, Globe, Menu as MenuIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import {
@@ -67,10 +67,8 @@ export function Header() {
         {/* Mobile Nav */}
         <div className="md:hidden flex items-center">
           <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="mr-2">
-                <MenuIcon className="h-5 w-5" />
-              </Button>
+            <SheetTrigger render={<Button variant="ghost" size="icon" className="mr-2" />}>
+              <MenuIcon className="h-5 w-5" />
             </SheetTrigger>
             <SheetContent side={locale === "ar" ? "right" : "left"} className="w-[300px] sm:w-[400px]">
               <div className="flex flex-col gap-6 py-6 mt-6">
@@ -114,10 +112,8 @@ export function Header() {
             <Skeleton className="h-9 w-9 rounded-full ml-2" />
           ) : isAuthenticated ? (
             <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full border border-border bg-muted/50 ml-2">
-                  <User className="h-5 w-5" />
-                </Button>
+              <DropdownMenuTrigger render={<Button variant="ghost" size="icon" className="rounded-full border border-border bg-muted/50 ml-2" />}>
+                <User className="h-5 w-5" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuLabel>{user?.name}</DropdownMenuLabel>
@@ -135,12 +131,12 @@ export function Header() {
             </DropdownMenu>
           ) : (
             <div className="hidden sm:flex gap-2 ml-2">
-              <Button variant="ghost" asChild>
-                <Link href="/login">{t("login")}</Link>
-              </Button>
-              <Button asChild>
-                <Link href="/register">{t("register")}</Link>
-              </Button>
+              <Link href="/login" className={buttonVariants({ variant: "ghost" })}>
+                {t("login")}
+              </Link>
+              <Link href="/register" className={buttonVariants()}>
+                {t("register")}
+              </Link>
             </div>
           )}
         </div>

@@ -24,7 +24,7 @@ export function MenuItemCard({ item }: MenuItemCardProps) {
   // Format price (assuming price is in smallest unit, e.g., halalas or cents)
   const formattedPrice = new Intl.NumberFormat(locale, {
     style: "currency",
-    currency: "SAR", // You can change this based on requirement
+    currency: "EGP", // Changed to Egyptian Pound
   }).format(item.price / 100);
 
   const handleAddToCart = () => {

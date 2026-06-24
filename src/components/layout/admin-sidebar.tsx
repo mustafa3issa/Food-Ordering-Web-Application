@@ -4,7 +4,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/routing";
 import { LayoutDashboard, ShoppingBag, UtensilsCrossed, Settings, Store } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 
 export function AdminSidebar() {
   const t = useTranslations("Admin");
@@ -62,12 +62,10 @@ export function AdminSidebar() {
       </nav>
 
       <div className="mt-auto pt-6 border-t">
-        <Button variant="outline" className="w-full justify-start" asChild>
-          <Link href="/">
-            <Store className="mr-2 h-4 w-4" />
-            {t("backToStore")}
-          </Link>
-        </Button>
+        <Link href="/" className={cn(buttonVariants({ variant: "outline" }), "w-full justify-start")}>
+          <Store className="mr-2 h-4 w-4" />
+          {t("backToStore")}
+        </Link>
       </div>
     </div>
   );

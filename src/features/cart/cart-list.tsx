@@ -2,7 +2,7 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import { useCartStore } from "@/stores/cart-store";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Minus, Plus, Trash2 } from "lucide-react";
@@ -32,7 +32,7 @@ export function CartList() {
   const formatPrice = (amount: number) => {
     return new Intl.NumberFormat(locale, {
       style: "currency",
-      currency: "SAR",
+      currency: "EGP",
     }).format(amount / 100);
   };
 
@@ -61,9 +61,9 @@ export function CartList() {
         <p className="text-muted-foreground mb-6 max-w-md">
           {t("emptyDescription")}
         </p>
-        <Button asChild size="lg">
-          <Link href="/menu">{t("browseMenu")}</Link>
-        </Button>
+        <Link href="/menu" className={buttonVariants({ size: "lg" })}>
+          {t("browseMenu")}
+        </Link>
       </div>
     );
   }
