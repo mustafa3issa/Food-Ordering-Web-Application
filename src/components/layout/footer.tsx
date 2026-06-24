@@ -63,7 +63,6 @@ export function Footer() {
         
         <div className="border-t mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} {t("brand")}. {t("allRightsReserved")}</p>
-          <p>{t("madeWithLove")}</p>
         </div>
       </div>
     </footer>

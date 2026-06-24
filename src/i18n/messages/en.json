@@ -205,7 +205,6 @@
     "address": "123 Street, City",
     "phone": "+20 123 456 7890",
     "email": "hello@foodapp.com",
-    "allRightsReserved": "All rights reserved.",
-    "madeWithLove": "Made with ❤️"
+    "allRightsReserved": "All rights reserved."
   }
 }
