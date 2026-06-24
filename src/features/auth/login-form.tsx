@@ -77,6 +77,20 @@ export function LoginForm() {
         <CardDescription>{authT("loginDescription")}</CardDescription>
       </CardHeader>
       <CardContent>
+        <div className="mb-6 rounded-lg bg-muted p-4 text-sm text-muted-foreground">
+          <p className="font-semibold text-foreground mb-2">Demo Credentials:</p>
+          <div className="grid grid-cols-2 gap-2">
+            <div>
+              <span className="font-medium">Customer:</span><br />
+              <code className="text-xs">user@example.com</code>
+            </div>
+            <div>
+              <span className="font-medium">Admin:</span><br />
+              <code className="text-xs">admin@example.com</code>
+            </div>
+          </div>
+          <p className="text-xs mt-2 italic">* Password can be anything (min 6 chars)</p>
+        </div>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="email">{authT("emailLabel")}</Label>
