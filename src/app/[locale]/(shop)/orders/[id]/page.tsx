@@ -68,7 +68,7 @@ export default function OrderTrackingPage({ params }: { params: Promise<{ locale
     <div className="container mx-auto px-4 py-8 max-w-4xl space-y-8">
       <div>
         <Link href="/orders" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-6 transition-colors">
-          <BackIcon className="mr-2 rtl:ml-2 h-4 w-4" />
+          <BackIcon className="me-2 h-4 w-4" />
           {t("backToOrders")}
         </Link>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -101,7 +101,7 @@ export default function OrderTrackingPage({ params }: { params: Promise<{ locale
             <div className="space-y-2">
               {order.items.map((item, index) => (
                 <div key={index} className="flex justify-between text-sm">
-                  <span className="text-muted-foreground mr-4">
+                  <span className="text-muted-foreground me-4">
                     <span className="font-medium text-foreground">{item.quantity}x</span>{" "}
                     {locale === "ar" ? item.nameAr : item.nameEn}
                   </span>

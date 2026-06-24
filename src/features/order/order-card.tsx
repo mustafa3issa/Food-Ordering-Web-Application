@@ -54,7 +54,7 @@ export function OrderCard({ order }: OrderCardProps) {
         <div className="space-y-2">
           {order.items.slice(0, 3).map((item, index) => (
             <div key={index} className="flex justify-between text-sm">
-              <span className="line-clamp-1 mr-4">
+              <span className="line-clamp-1 me-4">
                 {item.quantity}x {locale === "ar" ? item.nameAr : item.nameEn}
               </span>
               <span className="text-muted-foreground whitespace-nowrap">

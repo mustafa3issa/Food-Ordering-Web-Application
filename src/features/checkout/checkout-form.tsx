@@ -215,10 +215,10 @@ export function CheckoutForm() {
             <CardTitle>{t("orderSummary")}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="space-y-2 max-h-60 overflow-y-auto pr-2">
+            <div className="space-y-2 max-h-60 overflow-y-auto pe-2">
               {items.map((item) => (
                 <div key={item.menuItem.id} className="flex justify-between text-sm">
-                  <span className="text-muted-foreground line-clamp-1 mr-4">
+                  <span className="text-muted-foreground line-clamp-1 me-4">
                     {item.quantity}x {locale === "ar" ? item.menuItem.nameAr : item.menuItem.nameEn}
                   </span>
                   <span className="font-medium whitespace-nowrap">

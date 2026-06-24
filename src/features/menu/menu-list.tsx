@@ -28,11 +28,11 @@ export function MenuList() {
       {/* Search and Filters Header */}
       <div className="flex flex-col md:flex-row gap-4 justify-between items-start md:items-center">
         <div className="relative w-full md:max-w-xs">
-          <Search className={cn("absolute top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground", locale === "ar" ? "right-3" : "left-3")} />
+          <Search className="absolute top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground start-3" />
           <Input
             type="search"
             placeholder={t("searchPlaceholder")}
-            className={cn("w-full", locale === "ar" ? "pr-9" : "pl-9")}
+            className="w-full ps-9"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />

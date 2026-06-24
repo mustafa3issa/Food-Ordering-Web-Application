@@ -55,16 +55,16 @@ export function MenuTable() {
     <div className="space-y-4">
       <div className="flex flex-col sm:flex-row justify-between gap-4">
         <div className="relative max-w-sm w-full">
-          <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+          <Search className="absolute start-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
             placeholder={t("searchPlaceholder")}
-            className="pl-9"
+            className="ps-9"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
         </div>
         <Button onClick={handleCreate}>
-          <Plus className="mr-2 h-4 w-4" />
+          <Plus className="me-2 h-4 w-4" />
           {t("addMenuItem")}
         </Button>
       </div>
@@ -78,7 +78,7 @@ export function MenuTable() {
               <TableHead>{t("category")}</TableHead>
               <TableHead>{t("price")}</TableHead>
               <TableHead className="text-center">{t("availability")}</TableHead>
-              <TableHead className="text-right">{t("actions")}</TableHead>
+              <TableHead className="text-end">{t("actions")}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -112,7 +112,7 @@ export function MenuTable() {
                       onCheckedChange={() => toggleAvailability(item.id, item.isAvailable)}
                     />
                   </TableCell>
-                  <TableCell className="text-right">
+                  <TableCell className="text-end">
                     <div className="flex justify-end gap-2">
                       <Button variant="ghost" size="icon" onClick={() => handleEdit(item)}>
                         <Edit2 className="h-4 w-4" />

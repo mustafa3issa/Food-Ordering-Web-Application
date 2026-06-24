@@ -64,10 +64,10 @@ export function OrdersTable() {
   return (
     <div className="space-y-4">
       <div className="relative max-w-sm w-full">
-        <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+        <Search className="absolute start-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
         <Input
           placeholder={t("searchPlaceholder")}
-          className="pl-9"
+          className="ps-9"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -81,7 +81,7 @@ export function OrdersTable() {
               <TableHead>{t("date")}</TableHead>
               <TableHead>{t("total")}</TableHead>
               <TableHead>{t("status")}</TableHead>
-              <TableHead className="text-right">{t("actions")}</TableHead>
+              <TableHead className="text-end">{t("actions")}</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -104,12 +104,12 @@ export function OrdersTable() {
                   <TableCell>
                     <StatusBadge status={order.status} />
                   </TableCell>
-                  <TableCell className="text-right">
+                  <TableCell className="text-end">
                     <Select
                       defaultValue={order.status}
                       onValueChange={(val) => handleStatusChange(order.id, val as string)}
                     >
-                      <SelectTrigger className="w-[140px] ml-auto h-8 text-xs">
+                      <SelectTrigger className="w-[140px] ms-auto h-8 text-xs">
                         <SelectValue placeholder={t("updateStatus")} />
                       </SelectTrigger>
                       <SelectContent>

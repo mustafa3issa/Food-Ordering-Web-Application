@@ -45,7 +45,7 @@ export function MenuItemCard({ item }: MenuItemCardProps) {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         {item.isFeatured && (
-          <div className="absolute top-2 left-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-md">
+          <div className="absolute top-2 start-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-md">
             {t("featured")}
           </div>
         )}

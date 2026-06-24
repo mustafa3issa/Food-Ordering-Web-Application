@@ -101,7 +101,7 @@ export function LoginForm() {
             )}
           </div>
           <Button type="submit" className="w-full" disabled={isLoading}>
-            {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            {isLoading && <Loader2 className="me-2 h-4 w-4 animate-spin" />}
             {authT("loginButton")}
           </Button>
         </form>

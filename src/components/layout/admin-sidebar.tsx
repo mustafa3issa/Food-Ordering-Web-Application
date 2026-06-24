@@ -63,7 +63,7 @@ export function AdminSidebar() {
 
       <div className="mt-auto pt-6 border-t">
         <Link href="/" className={cn(buttonVariants({ variant: "outline" }), "w-full justify-start")}>
-          <Store className="mr-2 h-4 w-4" />
+          <Store className="me-2 h-4 w-4" />
           {t("backToStore")}
         </Link>
       </div>

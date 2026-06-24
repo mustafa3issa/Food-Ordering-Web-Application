@@ -67,7 +67,7 @@ export function Header() {
         {/* Mobile Nav */}
         <div className="md:hidden flex items-center">
           <Sheet>
-            <SheetTrigger render={<Button variant="ghost" size="icon" className="mr-2" />}>
+            <SheetTrigger render={<Button variant="ghost" size="icon" className="me-2" />}>
               <MenuIcon className="h-5 w-5" />
             </SheetTrigger>
             <SheetContent side={locale === "ar" ? "right" : "left"} className="w-[300px] sm:w-[400px]">
@@ -101,7 +101,7 @@ export function Header() {
             <Button variant="ghost" size="icon" className="relative">
               <ShoppingCart className="h-5 w-5" />
               {isMounted && cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
+                <span className="absolute -top-1 -end-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
                   {cartCount}
                 </span>
               )}
@@ -109,10 +109,10 @@ export function Header() {
           </Link>
 
           {!isMounted ? (
-            <Skeleton className="h-9 w-9 rounded-full ml-2" />
+            <Skeleton className="h-9 w-9 rounded-full ms-2" />
           ) : isAuthenticated ? (
             <DropdownMenu>
-              <DropdownMenuTrigger render={<Button variant="ghost" size="icon" className="rounded-full border border-border bg-muted/50 ml-2" />}>
+              <DropdownMenuTrigger render={<Button variant="ghost" size="icon" className="rounded-full border border-border bg-muted/50 ms-2" />}>
                 <User className="h-5 w-5" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
@@ -124,13 +124,13 @@ export function Header() {
                   </DropdownMenuItem>
                 )}
                 <DropdownMenuItem onClick={handleLogout} className="text-destructive">
-                  <LogOut className="mr-2 h-4 w-4" />
+                  <LogOut className="me-2 h-4 w-4" />
                   <span>{t("logout")}</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           ) : (
-            <div className="hidden sm:flex gap-2 ml-2">
+            <div className="hidden sm:flex gap-2 ms-2">
               <Link href="/login" className={buttonVariants({ variant: "ghost" })}>
                 {t("login")}
               </Link>
