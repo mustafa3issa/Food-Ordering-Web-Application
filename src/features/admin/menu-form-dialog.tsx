@@ -141,7 +141,7 @@ export function MenuFormDialog({ open, onOpenChange, item }: MenuFormDialogProps
                 onValueChange={(val) => setValue("categoryId", val as string)}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Select category" />
+                  <SelectValue placeholder={t("selectCategory")} />
                 </SelectTrigger>
                 <SelectContent>
                   {categories.map((cat) => (

@@ -85,7 +85,7 @@ export function MenuTable() {
             {filteredItems.length === 0 ? (
               <TableRow>
                 <TableCell colSpan={6} className="text-center py-8 text-muted-foreground">
-                  No items found
+                  {t("noItemsFound")}
                 </TableCell>
               </TableRow>
             ) : (

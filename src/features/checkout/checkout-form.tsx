@@ -185,13 +185,13 @@ export function CheckoutForm() {
                   onValueChange={(value) => form.setValue("paymentMethod", value as "cash" | "card")}
                   className="flex flex-col space-y-1"
                 >
-                  <div className="flex items-center space-x-3 space-x-reverse">
+                  <div className="flex items-center gap-3">
                     <RadioGroupItem value="cash" id="cash" />
                     <label htmlFor="cash" className="font-normal text-sm cursor-pointer">
                       {t("cashOnDelivery")}
                     </label>
                   </div>
-                  <div className="flex items-center space-x-3 space-x-reverse">
+                  <div className="flex items-center gap-3">
                     <RadioGroupItem value="card" id="card" disabled />
                     <label htmlFor="card" className="font-normal text-sm text-muted-foreground">
                       {t("creditCard")} ({t("comingSoon")})

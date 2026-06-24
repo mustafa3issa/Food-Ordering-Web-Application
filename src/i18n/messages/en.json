@@ -83,7 +83,9 @@
       "edit": "Edit",
       "delete": "Delete",
       "deleteConfirm": "Are you sure you want to delete this item?",
-      "searchPlaceholder": "Search menu items..."
+      "searchPlaceholder": "Search menu items...",
+      "selectCategory": "Select category",
+      "noItemsFound": "No items found."
     },
     "ordersManagement": {
       "orderId": "Order ID",

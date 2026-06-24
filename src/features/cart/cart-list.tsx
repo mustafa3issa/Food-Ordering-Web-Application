@@ -110,7 +110,7 @@ export function CartList() {
                   </div>
                   
                   <div className="mt-auto flex items-center justify-between">
-                    <div className="flex items-center space-x-2 space-x-reverse">
+                    <div className="flex items-center gap-2">
                       <Button
                         variant="outline"
                         size="icon"

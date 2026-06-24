@@ -14,6 +14,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { Link } from "@/i18n/routing";
+import { useSearchParams } from "next/navigation";
 
 export function LoginForm() {
   const t = useTranslations("Common");
@@ -21,6 +22,8 @@ export function LoginForm() {
   const router = useRouter();
   const login = useAuthStore((state) => state.login);
   const [isLoading, setIsLoading] = useState(false);
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get("redirect");
 
   // We define the schema inside the component to use translations, or use simple static messages
   const loginSchema = z.object({
@@ -55,6 +58,8 @@ export function LoginForm() {
       // Redirect based on role
       if (role === "admin") {
         router.push("/dashboard");
+      } else if (redirect) {
+        router.push(redirect);
       } else {
         router.push("/menu");
       }
@@ -109,7 +114,7 @@ export function LoginForm() {
       <CardFooter>
         <div className="text-sm text-muted-foreground w-full text-center">
           {authT("noAccount")}{" "}
-          <Link href="/register" className="text-primary hover:underline">
+          <Link href={redirect ? `/register?redirect=${redirect}` : "/register"} className="text-primary hover:underline">
             {authT("registerLink")}
           </Link>
         </div>

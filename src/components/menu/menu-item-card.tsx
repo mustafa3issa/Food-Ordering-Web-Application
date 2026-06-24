@@ -35,13 +35,13 @@ export function MenuItemCard({ item }: MenuItemCardProps) {
   };
 
   return (
-    <Card className="overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-      <div className="relative h-48 w-full bg-muted">
+    <Card className="group overflow-hidden flex flex-col h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300 animate-fade-up">
+      <div className="relative h-48 w-full bg-muted overflow-hidden">
         <Image
           src={item.image}
           alt={name}
           fill
-          className="object-cover"
+          className="object-cover transition-transform duration-500 group-hover:scale-110"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         {item.isFeatured && (

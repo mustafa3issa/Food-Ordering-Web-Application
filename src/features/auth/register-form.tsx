@@ -14,6 +14,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { Link } from "@/i18n/routing";
+import { useSearchParams } from "next/navigation";
 
 export function RegisterForm() {
   const t = useTranslations("Common");
@@ -21,6 +22,8 @@ export function RegisterForm() {
   const router = useRouter();
   const registerAction = useAuthStore((state) => state.register);
   const [isLoading, setIsLoading] = useState(false);
+  const searchParams = useSearchParams();
+  const redirect = searchParams.get("redirect");
 
   const registerSchema = z.object({
     name: z.string().min(2, { message: "Name must be at least 2 characters" }),
@@ -52,7 +55,11 @@ export function RegisterForm() {
     try {
       await registerAction(data.name, data.email, data.phone, data.address);
       toast.success(authT("registerSuccess"));
-      router.push("/menu");
+      if (redirect) {
+        router.push(redirect);
+      } else {
+        router.push("/menu");
+      }
     } catch (error) {
       toast.error(t("error"));
     } finally {
@@ -144,7 +151,7 @@ export function RegisterForm() {
       <CardFooter>
         <div className="text-sm text-muted-foreground w-full text-center">
           {authT("hasAccount")}{" "}
-          <Link href="/login" className="text-primary hover:underline">
+          <Link href={redirect ? `/login?redirect=${redirect}` : "/login"} className="text-primary hover:underline">
             {authT("loginLink")}
           </Link>
         </div>

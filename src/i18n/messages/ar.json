@@ -83,7 +83,9 @@
       "edit": "تعديل",
       "delete": "حذف",
       "deleteConfirm": "هل أنت متأكد من حذف هذا الصنف؟",
-      "searchPlaceholder": "ابحث عن صنف..."
+      "searchPlaceholder": "ابحث عن صنف...",
+      "selectCategory": "اختر القسم",
+      "noItemsFound": "لم يتم العثور على عناصر."
     },
     "ordersManagement": {
       "orderId": "رقم الطلب",

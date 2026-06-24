@@ -36,7 +36,7 @@ export function OrderCard({ order }: OrderCardProps) {
   };
 
   return (
-    <Card className="overflow-hidden">
+    <Card className="overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 animate-fade-up">
       <CardHeader className="bg-muted/30 pb-4">
         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
           <div className="flex items-center gap-2">

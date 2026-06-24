@@ -125,5 +125,40 @@
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
+  }
+}
+
+/* ─── Micro-animation utilities ─────────────────────────────── */
+@layer utilities {
+  /* Fade-up entrance for cards and sections */
+  .animate-fade-up {
+    animation: fade-up 0.4s ease-out both;
+  }
+
+  /* Stagger children with CSS custom properties */
+  .animate-fade-up-delay-1 { animation: fade-up 0.4s 0.05s ease-out both; }
+  .animate-fade-up-delay-2 { animation: fade-up 0.4s 0.10s ease-out both; }
+  .animate-fade-up-delay-3 { animation: fade-up 0.4s 0.15s ease-out both; }
+  .animate-fade-up-delay-4 { animation: fade-up 0.4s 0.20s ease-out both; }
+
+  /* Scrollbar hide — used on category tabs */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
