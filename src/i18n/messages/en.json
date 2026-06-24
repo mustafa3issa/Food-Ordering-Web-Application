@@ -77,5 +77,33 @@
     "deliveryFee": "Delivery Fee",
     "total": "Total",
     "proceedToCheckout": "Proceed to Checkout"
+  },
+  "Checkout": {
+    "pageTitle": "Checkout",
+    "shippingDetails": "Shipping Details",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "John Doe",
+    "phone": "Phone Number",
+    "address": "Address",
+    "addressPlaceholder": "Street, Building, Apartment",
+    "city": "City",
+    "cityPlaceholder": "Cairo",
+    "paymentMethod": "Payment Method",
+    "cashOnDelivery": "Cash on Delivery",
+    "creditCard": "Credit Card",
+    "comingSoon": "Coming Soon",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "deliveryFee": "Delivery Fee",
+    "total": "Total",
+    "placeOrder": "Place Order",
+    "successMessage": "Order placed successfully!",
+    "orderId": "Order ID",
+    "errors": {
+      "nameRequired": "Full name is required",
+      "phoneRequired": "Valid phone number is required",
+      "addressRequired": "Address is required",
+      "cityRequired": "City is required"
+    }
   }
 }

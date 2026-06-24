@@ -77,5 +77,33 @@
     "deliveryFee": "رسوم التوصيل",
     "total": "الإجمالي",
     "proceedToCheckout": "متابعة الدفع"
+  },
+  "Checkout": {
+    "pageTitle": "إتمام الطلب",
+    "shippingDetails": "تفاصيل التوصيل",
+    "fullName": "الاسم الكامل",
+    "fullNamePlaceholder": "أحمد محمد",
+    "phone": "رقم الهاتف",
+    "address": "العنوان",
+    "addressPlaceholder": "الشارع، المبنى، الشقة",
+    "city": "المدينة",
+    "cityPlaceholder": "القاهرة",
+    "paymentMethod": "طريقة الدفع",
+    "cashOnDelivery": "الدفع عند الاستلام",
+    "creditCard": "البطاقة الائتمانية",
+    "comingSoon": "قريباً",
+    "orderSummary": "ملخص الطلب",
+    "subtotal": "المجموع الفرعي",
+    "deliveryFee": "رسوم التوصيل",
+    "total": "الإجمالي",
+    "placeOrder": "تأكيد الطلب",
+    "successMessage": "تم تأكيد طلبك بنجاح!",
+    "orderId": "رقم الطلب",
+    "errors": {
+      "nameRequired": "يرجى إدخال الاسم الكامل",
+      "phoneRequired": "يرجى إدخال رقم هاتف صحيح",
+      "addressRequired": "العنوان مطلوب لإتمام التوصيل",
+      "cityRequired": "يرجى إدخال اسم المدينة"
+    }
   }
 }
