@@ -4,21 +4,29 @@ import { ReactNode } from "react";
 import { AdminSidebar } from "@/components/layout/admin-sidebar";
 import { useAuthStore } from "@/stores/auth-store";
 import { useRouter } from "@/i18n/routing";
+import { useHydrated } from "@/hooks/use-hydrated";
 import { useEffect } from "react";
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
   const { user, isAuthenticated } = useAuthStore();
   const router = useRouter();
+  const isHydrated = useHydrated();
 
   useEffect(() => {
-    // Basic route protection for prototype
-    if (!isAuthenticated || user?.role !== "admin") {
-      router.push("/login");
+    // Only run protection after Zustand has hydrated from localStorage
+    if (isHydrated) {
+      if (!isAuthenticated || user?.role !== "admin") {
+        router.push("/login");
+      }
     }
-  }, [isAuthenticated, user, router]);
+  }, [isAuthenticated, user, router, isHydrated]);
+
+  if (!isHydrated) {
+    return null; // Wait for hydration
+  }
 
   if (!isAuthenticated || user?.role !== "admin") {
-    return null; // or a loading spinner
+    return null; 
   }
 
   return (

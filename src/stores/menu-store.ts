@@ -11,6 +11,9 @@ interface MenuState {
   setSearchQuery: (query: string) => void;
   setSelectedCategory: (categoryId: string | null) => void;
   getFilteredItems: () => MenuItem[];
+  addMenuItem: (item: Omit<MenuItem, "id">) => void;
+  updateMenuItem: (id: string, data: Partial<MenuItem>) => void;
+  deleteMenuItem: (id: string) => void;
 }
 
 export const useMenuStore = create<MenuState>((set, get) => ({
@@ -26,7 +29,7 @@ export const useMenuStore = create<MenuState>((set, get) => ({
     const { items, searchQuery, selectedCategoryId } = get();
     
     return items.filter((item) => {
-      // Filter by availability
+      // Filter by availability (public view)
       if (!item.isAvailable) return false;
 
       // Filter by category
@@ -47,4 +50,22 @@ export const useMenuStore = create<MenuState>((set, get) => ({
       return true;
     });
   },
+
+  addMenuItem: (item) => set((state) => {
+    const newItem: MenuItem = {
+      ...item,
+      id: `m${Date.now()}`
+    };
+    return { items: [...state.items, newItem] };
+  }),
+
+  updateMenuItem: (id, data) => set((state) => ({
+    items: state.items.map((item) => 
+      item.id === id ? { ...item, ...data } : item
+    )
+  })),
+
+  deleteMenuItem: (id) => set((state) => ({
+    items: state.items.filter((item) => item.id !== id)
+  }))
 }));

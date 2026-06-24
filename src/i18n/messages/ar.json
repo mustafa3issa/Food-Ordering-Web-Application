@@ -53,9 +53,49 @@
     "adminPanel": "لوحة الإدارة",
     "dashboard": "نظرة عامة",
     "orders": "إدارة الطلبات",
-    "menuItems": "الأصناف",
+    "menuItems": "عناصر المنيو",
     "settings": "الإعدادات",
-    "backToStore": "العودة للمتجر"
+    "backToStore": "العودة للمتجر",
+    "stats": {
+      "totalRevenue": "إجمالي الأرباح",
+      "totalOrders": "إجمالي الطلبات",
+      "pendingOrders": "الطلبات المعلقة",
+      "deliveredOrders": "الطلبات المكتملة",
+      "revenueDescription": "الأرباح في جميع الأوقات",
+      "ordersDescription": "الطلبات في جميع الأوقات",
+      "pendingDescription": "تتطلب انتباهك",
+      "deliveredDescription": "تم إيصالها بنجاح"
+    },
+    "menu": {
+      "addMenuItem": "إضافة صنف",
+      "editMenuItem": "تعديل الصنف",
+      "image": "الصورة",
+      "nameEn": "الاسم (إنجليزي)",
+      "nameAr": "الاسم (عربي)",
+      "price": "السعر",
+      "category": "القسم",
+      "availability": "متاح",
+      "actions": "إجراءات",
+      "descriptionEn": "الوصف (إنجليزي)",
+      "descriptionAr": "الوصف (عربي)",
+      "save": "حفظ",
+      "cancel": "إلغاء",
+      "edit": "تعديل",
+      "delete": "حذف",
+      "deleteConfirm": "هل أنت متأكد من حذف هذا الصنف؟",
+      "searchPlaceholder": "ابحث عن صنف..."
+    },
+    "ordersManagement": {
+      "orderId": "رقم الطلب",
+      "customer": "العميل",
+      "date": "التاريخ",
+      "total": "الإجمالي",
+      "status": "الحالة",
+      "actions": "إجراءات",
+      "searchPlaceholder": "ابحث برقم الطلب أو اسم العميل...",
+      "updateStatus": "تحديث الحالة",
+      "noOrders": "لا توجد طلبات لعرضها."
+    }
   },
   "Menu": {
     "pageTitle": "قائمة الطعام",

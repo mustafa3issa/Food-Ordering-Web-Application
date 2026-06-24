@@ -55,7 +55,47 @@
     "orders": "Orders Management",
     "menuItems": "Menu Items",
     "settings": "Settings",
-    "backToStore": "Back to Store"
+    "backToStore": "Back to Store",
+    "stats": {
+      "totalRevenue": "Total Revenue",
+      "totalOrders": "Total Orders",
+      "pendingOrders": "Pending Orders",
+      "deliveredOrders": "Delivered Orders",
+      "revenueDescription": "All time revenue",
+      "ordersDescription": "All time orders",
+      "pendingDescription": "Requires attention",
+      "deliveredDescription": "Successfully completed"
+    },
+    "menu": {
+      "addMenuItem": "Add Menu Item",
+      "editMenuItem": "Edit Menu Item",
+      "image": "Image",
+      "nameEn": "Name (English)",
+      "nameAr": "Name (Arabic)",
+      "price": "Price",
+      "category": "Category",
+      "availability": "Available",
+      "actions": "Actions",
+      "descriptionEn": "Description (English)",
+      "descriptionAr": "Description (Arabic)",
+      "save": "Save",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "deleteConfirm": "Are you sure you want to delete this item?",
+      "searchPlaceholder": "Search menu items..."
+    },
+    "ordersManagement": {
+      "orderId": "Order ID",
+      "customer": "Customer",
+      "date": "Date",
+      "total": "Total",
+      "status": "Status",
+      "actions": "Actions",
+      "searchPlaceholder": "Search orders by ID or Customer...",
+      "updateStatus": "Update Status",
+      "noOrders": "No orders found."
+    }
   },
   "Menu": {
     "pageTitle": "Our Menu",
