@@ -35,6 +35,12 @@ export function CheckoutForm() {
     }
   }, [isAuthenticated, isMounted, router]);
 
+  useEffect(() => {
+    if (isMounted && isAuthenticated && items.length === 0) {
+      router.push("/cart");
+    }
+  }, [isMounted, isAuthenticated, items.length, router]);
+
   const formSchema = z.object({
     fullName: z.string().min(2, { message: t("errors.nameRequired") }),
     phone: z.string().min(8, { message: t("errors.phoneRequired") }),
@@ -61,12 +67,7 @@ export function CheckoutForm() {
     }).format(amount / 100);
   };
 
-  if (!isMounted || !isAuthenticated) {
-    return null;
-  }
-
-  if (items.length === 0) {
-    router.push("/cart");
+  if (!isMounted || !isAuthenticated || items.length === 0) {
     return null;
   }
 
