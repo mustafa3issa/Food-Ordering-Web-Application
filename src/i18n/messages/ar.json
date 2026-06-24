@@ -39,5 +39,14 @@
     "hasAccount": "لديك حساب بالفعل؟",
     "loginLink": "تسجيل الدخول",
     "registerSuccess": "تم إنشاء الحساب بنجاح"
+  },
+  "Header": {
+    "brand": "فودي",
+    "menu": "المنيو",
+    "myOrders": "طلباتي",
+    "login": "دخول",
+    "register": "حساب جديد",
+    "logout": "تسجيل الخروج",
+    "dashboard": "لوحة التحكم"
   }
 }

@@ -39,5 +39,14 @@
     "hasAccount": "Already have an account?",
     "loginLink": "Sign in",
     "registerSuccess": "Account created successfully"
+  },
+  "Header": {
+    "brand": "Foodie",
+    "menu": "Menu",
+    "myOrders": "My Orders",
+    "login": "Sign In",
+    "register": "Sign Up",
+    "logout": "Logout",
+    "dashboard": "Dashboard"
   }
 }
