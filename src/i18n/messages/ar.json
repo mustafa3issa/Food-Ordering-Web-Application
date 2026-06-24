@@ -29,6 +29,15 @@
     "loginButton": "تسجيل الدخول",
     "noAccount": "ليس لديك حساب؟",
     "registerLink": "أنشئ حساباً",
-    "loginSuccess": "تم تسجيل الدخول بنجاح"
+    "loginSuccess": "تم تسجيل الدخول بنجاح",
+    "registerTitle": "إنشاء حساب جديد",
+    "registerDescription": "أدخل بياناتك أدناه لإنشاء حسابك",
+    "nameLabel": "الاسم الكامل",
+    "phoneLabel": "رقم الجوال",
+    "addressLabel": "عنوان التوصيل",
+    "registerButton": "إنشاء حساب",
+    "hasAccount": "لديك حساب بالفعل؟",
+    "loginLink": "تسجيل الدخول",
+    "registerSuccess": "تم إنشاء الحساب بنجاح"
   }
 }

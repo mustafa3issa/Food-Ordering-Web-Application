@@ -29,6 +29,15 @@
     "loginButton": "Sign In",
     "noAccount": "Don't have an account?",
     "registerLink": "Sign up",
-    "loginSuccess": "Successfully logged in"
+    "loginSuccess": "Successfully logged in",
+    "registerTitle": "Create an account",
+    "registerDescription": "Enter your details below to create your account",
+    "nameLabel": "Full Name",
+    "phoneLabel": "Phone Number",
+    "addressLabel": "Delivery Address",
+    "registerButton": "Sign Up",
+    "hasAccount": "Already have an account?",
+    "loginLink": "Sign in",
+    "registerSuccess": "Account created successfully"
   }
 }
