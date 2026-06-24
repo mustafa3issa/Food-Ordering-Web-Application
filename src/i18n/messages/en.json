@@ -56,5 +56,26 @@
     "menuItems": "Menu Items",
     "settings": "Settings",
     "backToStore": "Back to Store"
+  },
+  "Menu": {
+    "pageTitle": "Our Menu",
+    "searchPlaceholder": "Search for food...",
+    "all": "All",
+    "noItemsFound": "No items found matching your criteria.",
+    "featured": "Featured",
+    "addToCart": "Add to Cart",
+    "soldOut": "Sold Out",
+    "addedToCart": "Added to cart successfully"
+  },
+  "Cart": {
+    "pageTitle": "Your Cart",
+    "emptyTitle": "Your cart is empty",
+    "emptyDescription": "Looks like you haven't added anything to your cart yet.",
+    "browseMenu": "Browse Menu",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "deliveryFee": "Delivery Fee",
+    "total": "Total",
+    "proceedToCheckout": "Proceed to Checkout"
   }
 }

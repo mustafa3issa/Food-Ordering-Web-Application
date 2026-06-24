@@ -56,5 +56,26 @@
     "menuItems": "الأصناف",
     "settings": "الإعدادات",
     "backToStore": "العودة للمتجر"
+  },
+  "Menu": {
+    "pageTitle": "قائمة الطعام",
+    "searchPlaceholder": "ابحث عن وجبة...",
+    "all": "الكل",
+    "noItemsFound": "عذراً، لم نجد أي أصناف مطابقة لبحثك.",
+    "featured": "مميز",
+    "addToCart": "أضف للسلة",
+    "soldOut": "نفذت الكمية",
+    "addedToCart": "تم الإضافة للسلة بنجاح"
+  },
+  "Cart": {
+    "pageTitle": "سلة المشتريات",
+    "emptyTitle": "سلتك فارغة",
+    "emptyDescription": "يبدو أنك لم تضف أي وجبات إلى سلتك حتى الآن.",
+    "browseMenu": "تصفح المنيو",
+    "orderSummary": "ملخص الطلب",
+    "subtotal": "المجموع الفرعي",
+    "deliveryFee": "رسوم التوصيل",
+    "total": "الإجمالي",
+    "proceedToCheckout": "متابعة الدفع"
   }
 }

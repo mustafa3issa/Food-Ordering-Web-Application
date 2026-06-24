@@ -6,6 +6,7 @@ import { useAuthStore } from "@/stores/auth-store";
 import { useCartStore } from "@/stores/cart-store";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, User, LogOut, Globe, Menu as MenuIcon } from "lucide-react";
+import { useEffect, useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,6 +20,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export function Header() {
   const t = useTranslations("Header");
@@ -26,8 +28,14 @@ export function Header() {
   const pathname = usePathname();
   const router = useRouter();
 
+  const [isMounted, setIsMounted] = useState(false);
+
   const { user, isAuthenticated, logout } = useAuthStore();
   const cartCount = useCartStore((state) => state.getTotalItems());
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const toggleLocale = () => {
     const nextLocale = locale === "en" ? "ar" : "en";
@@ -44,7 +52,7 @@ export function Header() {
       <Link href="/menu" className="text-sm font-medium transition-colors hover:text-primary">
         {t("menu")}
       </Link>
-      {isAuthenticated && (
+      {isMounted && isAuthenticated && (
         <Link href="/orders" className="text-sm font-medium transition-colors hover:text-primary">
           {t("myOrders")}
         </Link>
@@ -94,7 +102,7 @@ export function Header() {
           <Link href="/cart">
             <Button variant="ghost" size="icon" className="relative">
               <ShoppingCart className="h-5 w-5" />
-              {cartCount > 0 && (
+              {isMounted && cartCount > 0 && (
                 <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
                   {cartCount}
                 </span>
@@ -102,10 +110,12 @@ export function Header() {
             </Button>
           </Link>
 
-          {isAuthenticated ? (
+          {!isMounted ? (
+            <Skeleton className="h-9 w-9 rounded-full ml-2" />
+          ) : isAuthenticated ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full border border-border bg-muted/50">
+                <Button variant="ghost" size="icon" className="rounded-full border border-border bg-muted/50 ml-2">
                   <User className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
