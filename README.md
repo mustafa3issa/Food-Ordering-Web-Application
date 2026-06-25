@@ -14,18 +14,9 @@ A modern, full-stack for a food ordering platform, featuring seamless bilingual 
 - **Dark/Light Mode**: Full theme customization support using `next-themes`.
 - **Mock Backend**: State persistence simulating a real-world API experience without needing a live database.
 
-## Screenshots
-
-*(Placeholder for Screenshots)*
-- `![Homepage](placeholder-url)`
-- `![Menu Details](placeholder-url)`
-- `![Checkout Flow](placeholder-url)`
-- `![Order Timeline](placeholder-url)`
-- `![Admin Dashboard](placeholder-url)`
-
 ## Demo
 
-* **Live Demo URL**: [food-ordering-web-2026.netlify.app]
+* **Live Demo URL**: https://food-ordering-web-2026.vercel.app/
 * **GitHub Repository URL**: [https://github.com/mustafa3issa/Food-Ordering-Web-Application]
 
 ## Tech Stack
@@ -160,6 +151,6 @@ This project was built using an AI-assisted development workflow. While AI tools
 
 ## Author
 
-**[Mustafa Issa]**
+**Mustafa Issa**
 - GitHub: [@mustafa3issa](https://github.com/mustafa3issa)
 - LinkedIn: [Mustafa Issa](https://linkedin.com/in/mustafa3issa)
